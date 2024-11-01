@@ -1,0 +1,30 @@
+<%- include('user_header', {logout :true})%>
+<div class="row">
+     <div id="content" class="col-sm-12">
+       <h1 class="title">Orders</h1>
+       <div class="panel panel-default">
+         <div class="panel-body">
+             <ul class="list-group">
+               <% for(var i=0; i<items.length; i++){ %>
+                 <li class="list-group-item">
+                   <span class="a"  style="font-weight:700;font-size:25px;line-height:20px;text-align:left;"><%= items[i].product_name  %> <%= items[i].price  %> <%= items[i].quantity  %> 
+                    <form action="/removefromcart" method="post">
+                      <input type="hidden" name="pid" value=<%=items[i].product_id%> >
+                      <button>REMOVE</button>
+                  </form>
+                  </span>
+               </li>
+               <% } %>
+   
+               </ul>
+         </div>
+         <%if(tp > 0){%>
+            <h1 class="abc">Total Price=<%= tp %> </h1>
+         <form action="/buynow" method="get">
+          <button>BUY NOW</button>
+      </form>
+      <% } %>
+         <div class="panel-footer">  </div>
+       </div>
+   
+     </div>

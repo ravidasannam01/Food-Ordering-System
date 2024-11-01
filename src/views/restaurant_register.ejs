@@ -1,0 +1,37 @@
+<%- include('header', {logout : false})%>
+    <% if (errmsg.length > 0) {%>
+        <p style="color: red; text-align: center;"><%= errmsg%></p>
+    <%}%>
+    <div class="ext-box for-register">
+        <form action="/restaurant/register" method="post">
+            <table style="width: 100%;">
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Restaurant Name</td>
+                    <td><input type="text" name="restaurantname"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number (max 10 digits)</td>
+                    <td><input type="text" name="phonenumber"></td>
+                </tr>   
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="address"></td>
+                </tr>
+                <tr>
+                    <td>About</td>
+                    <td><input type="text" name="about"></td>
+                </tr>
+            
+            </table> 
+            <button class="cmn-btn">REGISTER</button>   
+        </form>
+    </div>
+<%- include('footer')%>

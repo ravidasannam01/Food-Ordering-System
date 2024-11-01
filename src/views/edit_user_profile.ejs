@@ -1,0 +1,27 @@
+<%- include('user_header', {logout : true})%>
+<div class="ext-box for-register">
+    <h3>Edit Profile for @<%= user.user_name %></h3>
+    <form action="/edit_user" method="post">
+        <table style="width: 100%;">
+            <tr>
+                <td>Full Name</td>
+                <td><input type="text" name="fullname" value=<%= user.full_name %>></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="text" name="phone_number" value=<%= user.phone_number %>></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="address" value=<%= user.address %>></td>
+            </tr>
+        </table> 
+        <button class="cmn-btn">SAVE CHANGES</button>           
+    </form>
+    <form method="get" action="/delete_user">
+        <button type="submit" class="cmn-btn delete-btn">
+            DELETE ACCOUNT
+        </button>
+    </form>
+</div>
+<%- include('footer')%>

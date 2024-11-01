@@ -1,0 +1,28 @@
+<%- include('restaurant_header', {logout : false})%>
+<% if (errmsg.length > 0) {%>
+    <p style="color: red; text-align: center;"><%= errmsg%></p>
+<%}%>
+    <div class="ext-box for-register">
+        <form action="/insert_product" method="post">
+            <table style="width: 100%;">
+                <tr>
+                    <td>Product Name</td>
+                    <td><input type="text" name="productname"></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type="text" name="price"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input type="text" name="description"></td>
+                </tr>
+                <tr>
+                    <td>Image URL</td>
+                    <td><input type="text" name="imageurl"></td>
+                </tr>
+            </table> 
+            <button class="cmn-btn">Add Product</button>   
+        </form>
+    </div>
+<%- include('footer')%>

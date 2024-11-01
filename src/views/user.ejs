@@ -1,0 +1,21 @@
+<%- include('user_header', {logout : true})%>
+<h1 class="to-center">Welcome to <%= user.user_name %></h1>
+<span style="float: right;">
+    <%if (showEdit) {%>
+        <button><a href="/edit_user_profile">Edit Profile</a></button>
+    <%}%>
+</span>
+<div class="home-box-main">
+    <div class="for-fulltweet-sub">
+        <p>
+            Full Name : <%= user.full_name %>
+        <p>
+        <p>
+            Phone Number : <%= user.phone_number %>
+        </p>
+        <p>
+            Address : <%= user.address %>
+        </p>
+    </div>    
+</div>
+<%- include('footer')%>

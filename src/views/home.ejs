@@ -1,0 +1,26 @@
+<%- include('user_header', {logout : true})%>
+<h2 class="to-center">Welcome <%= user.user_name %></h2>
+<div class="home-box-main">
+    <h3 class="to-center">Restaurants</h3>  
+    <%for (let restaurant of restaurant_details) {%>
+        <% if (restaurant != null) {%> 
+            <div class="for-fulltweet-sub">
+                <div class="home-box-twt-meta">
+                    <span class="twt-meta-span">
+                        <b>
+                            <a href=<%= '/restaurant/' + restaurant.restaurant_id %>>
+                                <%= restaurant.restaurant_name %>
+                            </a>
+                        </b>
+                    </span>
+                </div>
+                <div class="for-fulltweet-sub">
+                    <p>
+                        <%= restaurant.about %>
+                    </p>
+                </div>                
+            </div>    
+        <%}%>
+    <%}%>
+</div>
+<%- include('footer')%>

@@ -1,0 +1,23 @@
+<%- include('restaurant_header', {logout : true})%>
+<div class="home-box-main">
+    <%for (let order of orders) {%>
+        <% if (order != null) {%> 
+            <div class="for-fulltweet-sub">
+                    <h2>
+                        User ID : <%= order.user_id %>
+                    </h2>
+                    <h2>
+                        Item Name : <%= order.product_name%>
+                    </h2>
+                    <p>
+                        Quantity : <%= order.quantity %>
+                    </p>
+                    <form action="/pending_orders" method="post">
+                        <input type="hidden" name="orderid" value = <%= order.order_id %> >
+                        <button>Order Compeleted</button>
+                    </form>
+            </div>
+        <%}%>
+    <%}%>
+</div>
+<%- include('footer')%>

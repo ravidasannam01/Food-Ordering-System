@@ -1,0 +1,31 @@
+<%- include('restaurant_header', {logout : true})%>
+<div class="ext-box for-register">
+    <h3>Edit Profile for @<%= restaurant.restaurant_username %></h3>
+    <form action="/edit_restaurant_profile" method="post">
+        <table style="width: 100%;">
+            <tr>
+                <td>Restaurant Name</td>
+                <td><input type="text" name="restaurant_name" value=<%= restaurant.restaurant_name %>></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="text" name="phone_number" value=<%= restaurant.phone_number %>></td>
+            </tr>
+            <tr>
+                <td>About</td>
+                <td><textarea name="about"cols="30" rows="10"><%= restaurant.about %></textarea></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="address" value=<%= restaurant.address %>></td>
+            </tr>
+        </table> 
+        <button class="cmn-btn">SAVE CHANGES</button>           
+    </form>
+    <form method="get" action="/delete_restaurant">
+        <button type="submit" class="cmn-btn delete-btn">
+            DELETE
+        </button>
+    </form>
+</div>
+<%- include('footer')%>

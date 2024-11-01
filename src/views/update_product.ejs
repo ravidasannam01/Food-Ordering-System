@@ -1,0 +1,28 @@
+<%- include('header', {logout : false})%>
+    <% if (errmsg.length > 0) {%>
+        <p style="color: red; text-align: center;"><%= errmsg%></p>
+    <%}%>
+    <div class="ext-box for-register">
+        <form action=<%="/update_product/" + product.product_id %> method="post">
+            <table style="width: 100%;">
+                <tr>
+                    <td>Product Name</td>
+                    <td><input type="text" name="productname" value=<%= product.product_name %>></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type="text" name="price" value=<%= product.price %>></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input type="text" name="description" value=<%= product.description %>></td>
+                </tr>
+                <tr>
+                    <td>Image URL</td>
+                    <td><input type="text" name="imageurl" value=<%= product.image %>></td>
+                </tr>
+            </table> 
+            <button class="cmn-btn">SAVE CHANGES</button>           
+        </form>
+    </div>
+<%- include('footer')%>
